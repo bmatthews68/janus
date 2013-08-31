@@ -3,12 +3,15 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:mvc="http://www.springframework.org/schema/mvc"
        xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:sec="http://www.springframework.org/schema/security"
        xsi:schemaLocation="http://www.springframework.org/schema/mvc
                            http://www.springframework.org/schema/mvc/spring-mvc.xsd
                            http://www.springframework.org/schema/beans
                            http://www.springframework.org/schema/beans/spring-beans.xsd
                            http://www.springframework.org/schema/context
-                           http://www.springframework.org/schema/context/spring-context.xsd">
+                           http://www.springframework.org/schema/context/spring-context.xsd
+                           http://www.springframework.org/schema/security
+                           http://www.springframework.org/schema/security/spring-security-3.1.xsd">
 
 
     <mvc:resources location="/css/" mapping="/css/**"/>
@@ -21,7 +24,7 @@
     <context:component-scan base-package="com.btmatthews.janus.server"/>
 
     <bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
-        <property name="basename" value="messages" />
+        <property name="basename" value="messages"/>
     </bean>
 
     <bean id="templateResolver"
@@ -41,4 +44,12 @@
         <property name="order" value="1"/>
         <property name="viewNames" value="*"/>
     </bean>
+
+    <bean id="gaeEntryPoint" class="com.btmatthews.janus.server.security.GAEAuthenticationEntryPoint"/>
+
+    <sec:http use-expressions="true" entry-point-ref="gaeEntryPoint">
+        <sec:intercept-url pattern="/" access="permitAll"/>
+        <sec:intercept-url pattern="/alarms/**" access="hasRole('USER')"/>
+    </sec:http>
+
 </beans>
