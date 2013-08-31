@@ -39,6 +39,6 @@
     <bean class="org.thymeleaf.spring3.view.ThymeleafViewResolver">
         <property name="templateEngine" ref="templateEngine"/>
         <property name="order" value="1"/>
-        <property name="viewNames" value="*.html"/>
+        <property name="viewNames" value="*"/>
     </bean>
 </beans>
