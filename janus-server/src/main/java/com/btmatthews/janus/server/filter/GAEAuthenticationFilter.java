@@ -46,8 +46,8 @@ public class GAEAuthenticationFilter extends GenericFilterBean {
 
     @Autowired
     private AuthenticationManager authenticationManager;
-    @Autowired
-    private AuthenticationFailureHandler failureHandler;
+    //@Autowired
+    //private AuthenticationFailureHandler failureHandler;
 
     public void doFilter(final ServletRequest request, final ServletResponse response, final FilterChain chain) throws IOException, ServletException {
 
@@ -73,7 +73,7 @@ public class GAEAuthenticationFilter extends GenericFilterBean {
                     }*/
                 } catch (final AuthenticationException e) {
                     // Authentication information was rejected by the authentication manager
-                    failureHandler.onAuthenticationFailure((HttpServletRequest) request, (HttpServletResponse) response, e);
+                    //failureHandler.onAuthenticationFailure((HttpServletRequest) request, (HttpServletResponse) response, e);
                     return;
                 }
             }

@@ -37,6 +37,9 @@ public class AccountImpl implements Account {
 
     private boolean enabled;
 
+    public AccountImpl() {
+    }
+
     public AccountImpl(final String userId, final String nickName, final String email) {
         this(null, userId, nickName, email, false, false);
     }

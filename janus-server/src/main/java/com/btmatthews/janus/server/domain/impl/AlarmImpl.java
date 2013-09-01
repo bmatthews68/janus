@@ -41,6 +41,9 @@ public class AlarmImpl implements Alarm {
 
     private boolean enabled;
 
+    public AlarmImpl() {
+    }
+
     public AlarmImpl(final Long id, final Long accountId, final int hour, final int minute, final boolean[] days, final boolean enabled) {
         this.account = Key.create(Account.class, accountId);
         this.hour = hour;
