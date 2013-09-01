@@ -1,11 +1,14 @@
 package com.btmatthews.janus.server.dao;
 
-/**
- * Created with IntelliJ IDEA.
- * User: bmatthews68
- * Date: 31/08/2013
- * Time: 15:59
- * To change this template use File | Settings | File Templates.
- */
+import com.btmatthews.janus.server.domain.Alarm;
+
 public interface AlarmDao {
+
+    Alarm create(Alarm alarm);
+
+    Alarm read(Long id);
+
+    Alarm update(Alarm alarm);
+
+    void delete(Long id);
 }

@@ -1,11 +1,14 @@
 package com.btmatthews.janus.server.dao;
 
-/**
- * Created with IntelliJ IDEA.
- * User: bmatthews68
- * Date: 31/08/2013
- * Time: 15:59
- * To change this template use File | Settings | File Templates.
- */
+import com.btmatthews.janus.server.domain.Account;
+
 public interface AccountDao {
+
+    Account create(Account account);
+
+    Account read(Long id);
+
+    Account update(Account account);
+
+    void delete(Long id);
 }
