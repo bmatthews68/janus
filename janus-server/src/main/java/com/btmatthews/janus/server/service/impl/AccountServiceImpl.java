@@ -24,17 +24,18 @@ public class AccountServiceImpl implements AccountService {
     }
 
     public Account createAccount(final Account account) {
-        return null;
+        return accountDao.create(account);
     }
 
     public Account getAccount(final String id) {
-        return null;
+        return accountDao.read(id);
     }
 
     public Account updateAccount(final String id, final Account account) {
-        return null;
+        return accountDao.update(account);
     }
 
     public void deleteAccount(final String id) {
+        accountDao.delete(id);
     }
 }

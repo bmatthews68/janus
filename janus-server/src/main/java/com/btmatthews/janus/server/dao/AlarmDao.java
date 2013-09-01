@@ -6,9 +6,9 @@ public interface AlarmDao {
 
     Alarm create(Alarm alarm);
 
-    Alarm read(Long id);
+    Alarm read(String id);
 
     Alarm update(Alarm alarm);
 
-    void delete(Long id);
+    void delete(String id);
 }

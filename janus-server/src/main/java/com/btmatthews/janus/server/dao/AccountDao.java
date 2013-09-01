@@ -6,9 +6,9 @@ public interface AccountDao {
 
     Account create(Account account);
 
-    Account read(Long id);
+    Account read(String id);
 
     Account update(Account account);
 
-    void delete(Long id);
+    void delete(String id);
 }

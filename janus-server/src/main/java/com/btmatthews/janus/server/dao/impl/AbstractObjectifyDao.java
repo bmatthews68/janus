@@ -19,7 +19,7 @@ public abstract class AbstractObjectifyDao<T, U extends T> {
         return build(key, obj);
     }
 
-    public T read(final Long id) {
+    public T read(final String id) {
         return ofy().load().type(type).id(id).now();
     }
 
@@ -28,7 +28,7 @@ public abstract class AbstractObjectifyDao<T, U extends T> {
         return obj;
     }
 
-    public void delete(final Long id) {
+    public void delete(final String id) {
         ofy().delete().type(type).id(id).now();
     }
 
